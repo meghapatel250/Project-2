@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BizPage Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <base href="https://cdn.jsdelivr.net/gh/linuxguist/bizpage@main/">
+
+  <!-- Favicons -->
+  <link href="" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /***************************** NAV *********************************************************/
+    #navbar .nav-link {}
+
+    #navbar .nav-link.active {
+      color: green;
+    }
+
+    #navbar .dropdown:hover a {
+      color: green;
+    }
+
+    /***************************** CATEGORIES *********************************************************/
+    #categories-div .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: calc(2em + 2vh) calc(1.5em + 1vmin);
+      grid-auto-flow: row dense;
+    }
+
+    #categories-div .card__image {
+      display: block;
+      max-width: 100%;
+    }
+
+    #categories-div .grid .card{
+      border: none;
+    }
+
+    /* ==== Styles Related to the callout ==== */
+    #categories-div .grid .card:nth-child(14) {
+      grid-column: 1/-1;
+      grid-row: span 2;
+      align-self: center;
+    }
+
+    @media (min-width: 712px) {
+      #categories-div .grid .card:nth-child(14) {
+        grid-column: 2/-2;
+      }
+    }
+
+    #categories-div .grid .card:nth-child(14) .card__image {
+      margin: 0 auto;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    @media (min-width: 712px) {
+      #categories-div .grid .card:nth-child(14) .card__image {
+        height: 100%;
+      }
+    }
+
+    /* ==== Additional Styles not related to grid layout ==== */
+    #categories-div .container {
+      display: grid;
+      grid-template-columns: minmax(1em, 1fr) minmax(-webkit-min-content, 1200px) minmax(1em, 1fr);
+      grid-template-columns: minmax(1em, 1fr) minmax(min-content, 1200px) minmax(1em, 1fr);
+      grid-template-areas: "l-gutter heading r-gutter" "l-gutter content r-gutter";
+      grid-row-gap: 1em;
+    }
+
+    #categories-div .grid {
+      grid-area: content;
+      margin-bottom: 2em;
+    }
+
+    #categories-div .card__link {
+      text-align: center;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #categories-div .card__link:hover {
+      color: #2d2d2d;
+    }
+
+    #categories-div .card__link:hover .card__image {
+      transform: scale(1.04);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+    }
+
+    #categories-div .card__link:hover .card__text {
+      transform: rotate(2deg) translate3d(3%, 1%, 0) scale(1.02);
+    }
+
+    #categories-div .card__link:hover .card__price {
+      transform: rotate(-2deg) translate3d(-3%, -1%, 0) scale(1.02);
+    }
+
+    #categories-div .card__image {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+      transition: transform 200ms ease-out, -webkit-clip-path 200ms ease-out;
+      transition: transform 200ms ease-out, clip-path 200ms ease-out;
+      transition: transform 200ms ease-out, clip-path 200ms ease-out, -webkit-clip-path 200ms ease-out;
+    }
+
+    #categories-div .card__price {
+      font-weight: 600;
+      transition: transform 300ms ease-out;
+    }
+
+    #categories-div .card__text {
+      padding: 1em 0 0.5em;
+      font-weight: 200;
+      transition: transform 300ms ease-out;
+    }
+
+
+
+    #categories-div {
+      font-family: system-ui;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /***************************** ALL CATEGORIES *********************************************************/
+
+    #new-arrival-div {}
+
+    #new-arrival-div .container {
+      margin-top: 50px;
+    }
+
+    #new-arrival-div h1 {
+      color: #5C7CFA;
+    }
+
+    #new-arrival-div .card {
+      box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+      border-radius: 15px;
+      transition: transform .2s;
+    }
+
+    #new-arrival-div .card-body {
+      padding: 10px;
+      margin-top: -50px;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      transition: all 1s ease-in-out;
+    }
+
+    #new-arrival-div .heart {
+      color: #989898;
+      margin-top: 15px;
+      margin-left: 230px;
+      font-size: 30px;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      padding: 0px;
+      text-align: center;
+    }
+
+    #new-arrival-div .heart-active {
+      color: #C50707;
+    }
+
+    #new-arrival-div .heart:hover {
+      color: red;
+      background-color: #f9f9f9;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      transition: all 1s ease-in-out;
+    }
+
+    #new-arrival-div .card-body a {
+      visibility: hidden;
+    }
+
+    #new-arrival-div .card:hover>.card-body {
+      margin-top: -0px;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+
+    #new-arrival-div .card:hover {
+      transform: scale(1.02);
+    }
+
+    #new-arrival-div .card:hover>.card-body>a {
+      visibility: visible;
+    }
+
+    #new-arrival-div .first-image {
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    #new-arrival-div .cart,
+    #new-arrival-div .wish {
+      padding: 5px;
+      width: 50px;
+      height: 50px;
+      margin-left: -24px;
+      margin-top: 0px;
+      margin-right: 3px;
+      background-color: #fff;
+      color: #5C7CFA;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      text-align: center;
+      -ms-display: flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #new-arrival-div .wish {
+      color: #C50707;
+    }
+
+    #new-arrival-div #toast,
+    #new-arrival-div #toast-cart {
+      padding: 10px;
+      padding-left: 5px;
+      position: fixed;
+      width: 230px;
+      height: 50px;
+      top: 0;
+      left: 80%;
+      transform: translate(-50%);
+      background-color: #EFF2FF;
+      color: #76777E;
+      padding: 1px;
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      visibility: hidden;
+      opacity: 0;
+      -ms-display: flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    #new-arrival-div #toast.show,
+    #new-arrival-div #toast-cart.show {
+      visibility: visible;
+      animation: fadeInOut 3s;
+    }
+
+    @keyframes fadeInOut {
+
+      5%,
+      95% {
+        opacity: 1;
+        top: 50px
+      }
+
+      15%,
+      85% {
+        opacity: 1;
+        top: 30px
+      }
+    }
+
+    /***************************** ALL CATEGORIES *********************************************************/
+    @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+    :root {
+      --d: 700ms;
+      --e: cubic-bezier(0.19, 1, 0.22, 1);
+      --font-sans: "Rubik", sans-serif;
+      --font-serif: "Cardo", serif;
+    }
+
+    #all-categories-div {
+      box-sizing: border-box;
+    }
+
+    #all-categories-div {
+      height: 100%;
+    }
+
+    #all-categories-div {
+      display: grid;
+      place-items: center;
+    }
+
+    #all-categories-div .page-content {
+      display: grid;
+      grid-gap: 1rem;
+      padding: 1rem;
+      max-width: 1024px;
+      margin: 0 auto;
+      font-family: var(--font-sans);
+    }
+
+    @media (min-width: 600px) {
+      #all-categories-div .page-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 800px) {
+      #all-categories-div .page-content {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    #all-categories-div .card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 1rem;
+      width: 100%;
+      height: 350px;
+      text-align: center;
+      color: whitesmoke;
+      background-color: whitesmoke;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 600px) {
+      #all-categories-div .card {
+        height: 350px;
+      }
+    }
+
+    #all-categories-div .card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-size: cover;
+      background-position: 0 0;
+      transition: transform calc(var(--d) * 1.5) var(--e);
+      pointer-events: none;
+    }
+
+    #all-categories-div .card:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      pointer-events: none;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+      transform: translateY(-50%);
+      transition: transform calc(var(--d) * 2) var(--e);
+    }
+
+    #all-categories-div .card:nth-child(1):before {
+      background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    }
+
+    #all-categories-div .card:nth-child(2):before {
+      background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    }
+
+    #all-categories-div .card:nth-child(3):before {
+      background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    }
+
+    #all-categories-div .card:nth-child(4):before {
+      background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    }
+
+    #all-categories-div .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 1rem;
+      transition: transform var(--d) var(--e);
+      z-index: 1;
+    }
+
+    #all-categories-div .content>*+* {
+      margin-top: 1rem;
+    }
+
+    #all-categories-div .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    #all-categories-div .copy {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    #all-categories-div .btn {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.65rem;
+      font-weight: bold;
+      letter-spacing: 0.025rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: black;
+      border: none;
+    }
+
+    #all-categories-div .btn:hover {
+      background-color: #0d0d0d;
+    }
+
+    #all-categories-div .btn:focus {
+      outline: 1px dashed yellow;
+      outline-offset: 3px;
+    }
+
+    @media (hover: hover) and (min-width: 600px) {
+      #all-categories-div .card:after {
+        transform: translateY(0);
+      }
+
+      #all-categories-div .content {
+        transform: translateY(calc(100% - 4.5rem));
+      }
+
+      #all-categories-div .content>*:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+      }
+
+      #all-categories-div .card:hover,
+      #all-categories-div .card:focus-within {
+        align-items: center;
+      }
+
+      #all-categories-div .card:hover:before,
+      #all-categories-div .card:focus-within:before {
+        transform: translateY(-4%);
+      }
+
+      #all-categories-div .card:hover:after,
+      #all-categories-div .card:focus-within:after {
+        transform: translateY(-50%);
+      }
+
+      #all-categories-div .card:hover .content,
+      #all-categories-div .card:focus-within .content {
+        transform: translateY(0);
+      }
+
+      #all-categories-div .card:hover .content>*:not(.title),
+      #all-categories-div .card:focus-within .content>*:not(.title) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+      }
+
+      #all-categories-div .card:focus-within:before,
+      #all-categories-div .card:focus-within:after,
+      #all-categories-div .card:focus-within .content,
+      #all-categories-div .card:focus-within .content>*:not(.title) {
+        transition-duration: 0s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--------------------------------- HEADER ------------------------------------------------------------>
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-11 d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.html">Anurao Printing</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#">Home</a></li>
+              <li><a class="nav-link scrollto" href="#">About</a></li>
+              <li><a class="nav-link scrollto" href="#">Services</a></li>
+              <li><a class="nav-link scrollto " href="#">Portfolio</a></li>
+              <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              <li><a class="nav-link scrollto" href="#"><i class="bi bi-search"></i></a></li>
+              <li><a class="nav-link scrollto" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!--------------------------------- HERO SECTION ------------------------------------------------------------>
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active"
+            style="background-image: url(https://img.freepik.com/free-photo/person-wrapping-christmas-present_144627-37526.jpg?w=740&t=st=1687327283~exp=1687327883~hmac=81a244599ffa6df24d7f426a3e82eddcbd442157c0e11dfdf29c6a8fe3f0a7be)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">We are professional</h2>
+                <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
+                  Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"
+            style="background-image: url(https://img.freepik.com/premium-photo/front-view-christmas-tree-gifts_23-2148706255.jpg?w=740)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
+                <p class="animate__animated animate__fadeInUp">Nam libero tempore, cum soluta nobis est eligendi optio
+                  cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
+                  omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
+                  Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"
+            style="background-image: url(https://img.freepik.com/free-photo/heart-shaped-gift-box-wooden-table-with-bokeh-background_181624-33673.jpg?w=740&t=st=1687327399~exp=1687327999~hmac=b6e274cc9b134e49beb8abeac8c46a6656e1c6a26c09588e7f858c0ce76f7e3b)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
+                <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                  voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+                  qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
+                  Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"
+            style="background-image: url(https://img.freepik.com/free-photo/bottom-view-xmas-gifts-brown-paper-ribbon-xmas-tree-toys-newspaper-beige_140725-105319.jpg?w=740&t=st=1687328311~exp=1687328911~hmac=35040a7e3ba2b9ffe8d6f1984dd52b6e9038bc09b52215b249041437ebf7ac7a)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>
+                <p class="animate__animated animate__fadeInUp">Neque porro quisquam est, qui dolorem ipsum quia dolor
+                  sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                  dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
+                  Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item"
+            style="background-image: url(https://img.freepik.com/free-photo/top-view-christmas-concept-with-copy-space_23-2148706275.jpg?w=826&t=st=1687328388~exp=1687328988~hmac=eb0485989b2f4670c2ba89216eae28994db3df4b03e289c7362b02b7e567ef0c)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>
+                <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
+                  Started</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!--------------------------------- CATEGORIES SECTION ------------------------------------------------------------>
+    <section id="categories-div" class="section-bg mt-5">
+      <header class="section-header" data-aos="fade-up">
+        <h3 class="section-title">Our Categories</h3>
+      </header>
+      <div class="container" data-aos="fade-up">
+
+        <ul class="grid">
+          <li class="card" data-aos="fade-up" data-aos-delay="100">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-photo-phone-stand.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="200">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-photo-wallet-card.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="300">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-acrylic-fridge-magnets-v1.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="400">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-illusion-lamp.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="100">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-pop-sockets.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="200">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-sipper-bottles-v1.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="300">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-photo-hangings.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-delay="400">
+            <a class="card__link" href="#"><img class="card__image"
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-omcc-dashboard-photo-stand.webp" />
+              <div class="card__text">
+                Example Product Name
+              </div>
+              <div class="card__price"></div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!--------------------------------- NEW ARRIVAL ------------------------------------------------------------>
+    <div id="new-arrival-div">
+      <div id="toast"></div>
+      <div id="toast-cart"></div>
+      <div class="container">
+        <h1  data-aos="zoom-in">New Arrivals</h1>
+        <hr>
+        <br>
+        <div class="row">
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card" style="width: 15rem;">
+              <img src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-na-photo-wallet-card.webp"
+                class="first-image">
+              <div class="card-body">
+                <a href="#">
+                  <center>Add to cart</center>
+                </a>
+                <hr>
+                <center>
+                  <h5 class="card-title">Black Pants</h5>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card" style="width: 15rem;">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-na-photo-phone-stand.webp"
+                class="first-image">
+              <div class="card-body">
+                <a href="#">
+                  <center>Add to cart</center>
+                </a>
+                <hr>
+                <center>
+                  <h5 class="card-title">Black Pants</h5>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card" style="width: 15rem;">
+              <img src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-na-acrylic-fridge-magnets-v1.webp"
+                class="first-image">
+              <div class="card-body">
+                <a href="#">
+                  <center>Add to cart</center>
+                </a>
+                <hr>
+                <center>
+                  <h5 class="card-title">T-shirt</h5>
+                </center>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card" style="width: 15rem;">
+              <img src="https://www.printshoppy.com/image/catalog/v5/webp/home-page/home-page-na-illusion-lamp.webp"
+                class="first-image">
+              <div class="card-body">
+                <a href="#">
+                  <center>Add to cart</center>
+                </a>
+                <hr>
+                <center>
+                  <h5 class="card-title">Pants</h5>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------- FRAME SECTION ------------------------------------------------------------>
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3>Frames</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <img src="https://assets.winni.in/product/primary/2023/1/80857.jpeg?dpr=1&w=300" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Digital</h4>
+                  <!-- <span>Chief Executive Officer</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v5/webp/acrylic-wall-frame/you-may-also-like/acrylic-wall-frames-ymal-acrylic-wall-gallery-d-v1.webp"
+                class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Acrylic</h4>
+                  <!-- <span>Product Manager</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <img src="https://assets.winni.in/product/primary/2023/1/82435.jpeg?dpr=1&w=300" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Canvas & Slider</h4>
+                  <!-- <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+   
+
+  </main>
+
+  <!--------------------------------- FOOTER ------------------------------------------------------------>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="footer-info">
+            <h3>Anurao Printing</h3>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-info footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">T&C's</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Refer & Earn</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Best Sellers</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Wall Photo Frames</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Photo Stands</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Mobile Cases</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Photo Mugs</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Support</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Track Order</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Return Order</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">FAQs</a></li>
+            </ul>
+
+            <div class="social-links mt-4">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter footer-links">
+            <h4>More Info</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">My Account</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Order History</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Your Credits</a></li>
+            </ul>
+            <form action="" method="post" class="mt-5 pt-3">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Anurao Printing</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+      -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the current URL, removing any fragment
+      var documentUrl = document.location.href.replace(/#.*$/, '')
+
+      // Iterate through all links
+      var linkEls = document.getElementsByTagName('A')
+      for (var linkIndex = 0; linkIndex < linkEls.length; linkIndex++) {
+        var linkEl = linkEls[linkIndex]
+
+        // Ignore links that don't begin with #
+        if (!linkEl.getAttribute('href').match(/^#/)) {
+          continue;
+        }
+
+        // Convert to an absolute URL
+        linkEl.setAttribute('href', documentUrl + linkEl.getAttribute('href'))
+      }
+    })    
+  </script>
+
+
+
+</body>
+
+</html>

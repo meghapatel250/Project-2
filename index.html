@@ -1,0 +1,2869 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    body {
+      line-height: 1.5;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    :before,
+    :after {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .v-center {
+      align-items: center;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* header */
+    .header {
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 99;
+      padding: 10px;
+    }
+
+    .header .item-left {
+      flex: 0 0 30%;
+
+    }
+
+    .header .item-left .logo a {
+      font-size: 30px;
+      color: #000000;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .header .item-right {
+      flex: 0 0 70%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .header-bottom {
+      flex: 0 0 100%;
+      display: flex;
+      background-color: darkslategray;
+      color: #ffffff;
+      justify-content: flex-start;
+    }
+
+    .header .item-left a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #555555;
+
+      display: inline-block;
+      margin-left: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .header .item-right a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #555555;
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      transition: color 0.3s ease;
+    }
+
+
+    /* /responsive/ */
+    @media(max-width: 991px) {
+
+
+      .header .item-left,
+      .header .item-right {
+        flex: 0 0 auto;
+
+      }
+
+      .header .item-left a {
+        font-size: 10px;
+      }
+
+      .header .item-right a {
+        font-size: 12px;
+        margin-right: 2px;
+      }
+
+      .v-center {
+        justify-content: space-between;
+      }
+
+      .header .item-right {
+        align-items: center;
+      }
+
+
+      @keyframes slideLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+
+      @keyframes slideRight {
+        0% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+      }
+
+    }
+
+
+    /* ************ */
+    /* Slider */
+    #slider {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes load {
+      from {
+        left: -100%;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+
+    .slides {
+      width: 400%;
+      height: 100%;
+      position: relative;
+      -webkit-animation: slide 30s infinite;
+      -moz-animation: slide 30s infinite;
+      animation: slide 30s infinite;
+    }
+
+    .slider {
+      width: 25%;
+      height: 100%;
+      float: left;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Legend */
+    .legend {
+      border: 500px solid transparent;
+      border-left: 800px solid rgba(52, 73, 94, .7);
+      border-bottom: 0;
+      position: absolute;
+      bottom: 0;
+    }
+
+    /* Contents */
+    #slider .content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .content-txt {
+      width: 400px;
+      height: 150px;
+      float: left;
+      position: relative;
+      top: 300px;
+      -webkit-animation: content-s 7.5s infinite;
+      -moz-animation: content-s 7.5s infinite;
+      animation: content-s 7.5s infinite;
+    }
+
+    .content-txt h1 {
+      text-transform: uppercase;
+
+      color: #fff;
+      text-align: left;
+      margin-left: 30px;
+      padding-bottom: 10px;
+    }
+
+    .content-txt h2 {
+      font-weight: normal;
+
+
+      color: #fff;
+      text-align: left;
+      margin-left: 30px;
+    }
+
+    /* Switch */
+    .switch {
+      width: 120px;
+      height: 10px;
+      position: absolute;
+      bottom: 50px;
+      z-index: 99;
+      left: 30px;
+    }
+
+    .switch>ul {
+      list-style: none;
+    }
+
+    .switch>ul>li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #333;
+      float: left;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .switch ul {
+      overflow: hidden;
+    }
+
+    .on {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #f39c12;
+      position: relative;
+      -webkit-animation: on 30s infinite;
+      -moz-animation: on 30s infinite;
+      animation: on 30s infinite;
+    }
+
+    /* Animation */
+    @-webkit-keyframes slide {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: -100%;
+      }
+
+      46% {
+        margin-left: -100%;
+      }
+
+      50% {
+        margin-left: -200%;
+      }
+
+      71% {
+        margin-left: -200%;
+      }
+
+      75% {
+        margin-left: -300%;
+      }
+
+      96% {
+        margin-left: -300%;
+      }
+    }
+
+    @-moz-keyframes slide {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: -100%;
+      }
+
+      46% {
+        margin-left: -100%;
+      }
+
+      50% {
+        margin-left: -200%;
+      }
+
+      71% {
+        margin-left: -200%;
+      }
+
+      75% {
+        margin-left: -300%;
+      }
+
+      96% {
+        margin-left: -300%;
+      }
+    }
+
+    @keyframes slide {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: -100%;
+      }
+
+      46% {
+        margin-left: -100%;
+      }
+
+      50% {
+        margin-left: -200%;
+      }
+
+      71% {
+        margin-left: -200%;
+      }
+
+      75% {
+        margin-left: -300%;
+      }
+
+      96% {
+        margin-left: -300%;
+      }
+    }
+
+    @-webkit-keyframes content-s {
+      0% {
+        left: -420px;
+      }
+
+      10% {
+        left: 0px;
+      }
+
+      30% {
+        left: 0px;
+      }
+
+      40% {
+        left: 0px;
+      }
+
+      50% {
+        left: 0px;
+      }
+
+      60% {
+        left: 0px;
+      }
+
+      70% {
+        left: 0;
+      }
+
+      80% {
+        left: -420px;
+      }
+
+      90% {
+        left: -420px;
+      }
+
+      100% {
+        left: -420px;
+      }
+    }
+
+    @-moz-keyframes content-s {
+      0% {
+        left: -420px;
+      }
+
+      10% {
+        left: 0px;
+      }
+
+      30% {
+        left: 0px;
+      }
+
+      40% {
+        left: 0px;
+      }
+
+      50% {
+        left: 0px;
+      }
+
+      60% {
+        left: 0px;
+      }
+
+      70% {
+        left: 0;
+      }
+
+      80% {
+        left: -420px;
+      }
+
+      90% {
+        left: -420px;
+      }
+
+      100% {
+        left: -420px;
+      }
+    }
+
+    @keyframes content-s {
+      0% {
+        left: -420px;
+      }
+
+      10% {
+        left: 20px;
+      }
+
+      15% {
+        left: 0px;
+      }
+
+      30% {
+        left: 0px;
+      }
+
+      40% {
+        left: 0px;
+      }
+
+      50% {
+        left: 0px;
+      }
+
+      60% {
+        left: 0px;
+      }
+
+      70% {
+        left: 0;
+      }
+
+      80% {
+        left: -420px;
+      }
+
+      90% {
+        left: -420px;
+      }
+
+      100% {
+        left: -420px;
+      }
+    }
+
+    @-webkit-keyframes on {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: 15px;
+      }
+
+      46% {
+        margin-left: 15px;
+      }
+
+      50% {
+        margin-left: 30px;
+      }
+
+      71% {
+        margin-left: 30px;
+      }
+
+      75% {
+        margin-left: 45px;
+      }
+
+      96% {
+        margin-left: 45px;
+      }
+    }
+
+    @-moz-keyframes on {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: 15px;
+      }
+
+      46% {
+        margin-left: 15px;
+      }
+
+      50% {
+        margin-left: 30px;
+      }
+
+      71% {
+        margin-left: 30px;
+      }
+
+      75% {
+        margin-left: 45px;
+      }
+
+      96% {
+        margin-left: 45px;
+      }
+    }
+
+    @keyframes on {
+
+      0%,
+      100% {
+        margin-left: 0%;
+      }
+
+      21% {
+        margin-left: 0%;
+      }
+
+      25% {
+        margin-left: 15px;
+      }
+
+      46% {
+        margin-left: 15px;
+      }
+
+      50% {
+        margin-left: 30px;
+      }
+
+      71% {
+        margin-left: 30px;
+      }
+
+      75% {
+        margin-left: 45px;
+      }
+
+      96% {
+        margin-left: 45px;
+      }
+    }
+
+    @media(max-width: 991px) {
+      #slider {
+        height: 240px;
+      }
+
+      .legend {
+        border: 240px solid transparent;
+        border-left: 355px solid rgba(52, 73, 94, .7);
+        border-bottom: 0;
+        position: absolute;
+
+      }
+
+      .content-txt {
+        width: 180px;
+
+        top: 100px;
+      }
+
+      .content-txt h1 {
+        font-size: 18px;
+      }
+
+      .content-txt h2 {
+        font-size: 14px;
+      }
+
+      .switch {
+        bottom: 0px;
+        top: 220px;
+      }
+    }
+
+
+    /* slider */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+    .wrapper {
+      padding: 35px;
+      position: relative;
+      overflow-x: hidden;
+
+      background: #fff;
+
+    }
+
+    .wrapper .icon {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 120px;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon:first-child {
+      left: 0;
+      display: none;
+
+    }
+
+    .icon:last-child {
+      right: 0;
+      justify-content: flex-end;
+
+    }
+
+    .icon i {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 55px;
+      border-radius: 50%;
+      color: #efedfb;
+      background: #ffc964;
+    }
+
+    .icon i:hover {
+      color: #212121;
+      background: #ffc964;
+    }
+
+    .icon:first-child i {
+      margin-left: 15px;
+    }
+
+    .icon:last-child i {
+      margin-right: 15px;
+    }
+
+    .wrapper .tabs-box {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .tabs-box.dragging {
+      scroll-behavior: auto;
+      cursor: grab;
+    }
+
+    .tabs-box .tab {
+      cursor: pointer;
+      font-size: 1.18rem;
+      white-space: nowrap;
+      background: #f5f4fd;
+      padding: 6px 15px;
+      border-radius: 10px;
+      border: 1px solid #e8e8ec;
+      user-select: none;
+    }
+
+    .tabs-box .tab:hover {
+      background: #efedfb;
+    }
+
+    .tabs-box.dragging .tab {
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .tabs-box .tab.active {
+      color: #fff;
+      background: #ffc964;
+      border-color: transparent;
+    }
+
+    @media(max-width: 991px) {
+      .wrapper {
+        padding: 12px;
+      }
+
+      .wrapper .tabs-box {
+        gap: 10px;
+      }
+
+      .tabs-box .tab {
+        font-size: 12px;
+        padding: 10px 13px;
+      }
+
+    }
+
+
+    /***************************** CURATION NEW ARRIVAL ***************************************/
+    #curation-new-main-div .grid-div .grid {
+      transition: all 1s;
+    }
+
+    #curation-new-main-div .grid-div .grid:hover {
+      transition: all .5s;
+      transform: translateY(-10px);
+    }
+
+    #curation-new-main-div .curation-div .heading,
+    .new-arrival-div .heading {
+      margin: 10px 0;
+      padding-bottom: 10px;
+      color: black;
+      font-weight: 600;
+    }
+
+    #curation-new-main-div .curation-div .image-div img,
+    #curation-new-main-div .new-arrival-div .image-div img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    #curation-new-main-div .curation-div .image-caption, #curation-new-main-div .new-arrival-div .image-caption{
+      background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148417584.jpg?size=626&ext=jpg&ga=GA1.2.2031644658.1674562410&semt=ais");
+      background-size: cover;
+      padding: 10px 0 5px 7px;
+    }
+
+    #curation-new-main-div .curation-div .image-caption .price {
+      color: gray;
+    }
+
+    #curation-new-main-div .curation-div .image-caption .name,
+    .new-arrival-div .image-caption .name {
+      color: #4265c0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    #curation-new-main-div .curation-div .image-caption .subtitle,
+    .new-arrival-div .image-caption .subtitle {
+      color: gray;
+    }
+
+    
+
+    /***************************** CUSTOM COLLECTION ***************************************/
+    #custom-collection {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 5px 0;
+    }
+
+    #custom-collection .heading h4 {
+      font-size: 20px;
+    }
+
+    #custom-collection .heading h4 span {
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    #custom-collection .course-card {
+      background: #ffffff;
+      border-radius: 25px;
+      width: 100%;
+      height: fit-content;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      margin: 10px;
+      transition: 0.25s ease-in-out;
+      
+    }
+
+    #custom-collection .course-card-img {
+      width: 100%;
+      height: 225px;
+      border-radius: 25px 25px 0px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #custom-collection .course-card-img .main {
+      height: 170px;
+      width: 180px;
+      object-fit: cover;
+      z-index: 1;
+      transition: 0.25s ease-in-out;
+    }
+
+    #custom-collection .course-card-img .layered {
+      height: 120px;
+      width: 130px;
+      position: absolute;
+      filter: blur(19px);
+      transition: 0.25s ease-in-out;
+    }
+
+    #custom-collection .course-card-content {
+      padding: 10px 0 10px 10px;
+    }
+
+    #custom-collection .course-card-content .price{
+      background-color: rgb(238, 43, 43);
+      width: fit-content;
+      color: white;
+      font-size: 14px;
+      float: right;
+      margin: 0;
+      padding: 3px 5px;
+    }
+
+    #custom-collection .course-card-content .name{
+      font-weight: 600;
+    }
+
+    #custom-collection .course-card-content .subtitle{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: gray;
+      font-size: 13px;
+    }
+
+    #custom-collection .course-card:hover {
+      transform: scale(1.05);
+    }
+
+    #custom-collection .course-card:hover .course-card-img .main {
+      transform: scale(1.1);
+    }
+
+    #custom-collection .course-card:hover .course-card-img .layered {
+      filter: blur(19);
+      transform: scale(1.5);
+    }
+
+    @media (max-width:485px) {
+      #custom-collection .course-card-img {
+        height: 200px;
+      }
+
+      #custom-collection .course-card-img .main {
+        height: 150px;
+        width: 150px;
+        transition: none;
+      }
+
+      #custom-collection .course-card:hover .course-card-img .main {
+        transform: none;
+      }
+
+      #custom-collection .course-card:hover .course-card-img .layered {
+        filter: blur(19);
+        transform: none;
+      }
+    }
+
+
+    /***************************** MONOGRAM ***************************************/
+    .monogram a,
+    .monogram a:hover,
+    .monogram a:focus,
+    .monogram a:active {
+      text-decoration: none;
+      outline: none;
+    }
+
+    .monogram a,
+    .monogram a:active,
+    .monogram a:focus {
+      text-decoration: none;
+      transition-timing-function: ease-in-out;
+      -ms-transition-timing-function: ease-in-out;
+      -moz-transition-timing-function: ease-in-out;
+      -webkit-transition-timing-function: ease-in-out;
+      -o-transition-timing-function: ease-in-out;
+      transition-duration: .3s;
+      -ms-transition-duration: .2s;
+      -moz-transition-duration: .2s;
+      -webkit-transition-duration: .2s;
+      -o-transition-duration: .2s;
+    }
+
+    .monogram ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .monogram img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .monogram span,
+    .monogram a,
+    .monogram a:hover {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .monogram .news-section {
+      padding: 75px 0;
+    }
+
+    .monogram .news-item {
+      box-shadow: 0 0 15px #ededed;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      margin-bottom: 40px;
+    }
+
+    .monogram .news-item:hover {
+      -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+      -webkit-box-shadow: 0px 15px 15px 0px #edeaea;
+      box-shadow: 0px 15px 15px 0px #edeaea;
+    }
+
+    .monogram .news-item:hover img{
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+
+    .monogram .news-item .news_box .img-caption {
+      padding: 10px 0 50px 15px;
+      padding-bottom: 15px;
+      background-image: url("https://img.freepik.com/premium-photo/delicate-yellow-abstract-watercolor-background_3590-82.jpg?size=626&ext=jpg&ga=GA1.1.2031644658.1674562410&semt=aishttps://img.freepik.com/free-photo/smooth-rose-quartz-tone-background-well-use-valentines-layout-design-studio-room-web-template_1258-285.jpg?size=626&ext=jpg&ga=GA1.1.2031644658.1674562410&semt=ais");
+    }
+
+    .monogram .news-item .news_box .img-caption .subtitle{
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      border-radius: 50%;
+      font-size: 13px;
+      padding: 5px 15px;
+      color: white;
+      background-color: #4265c0;
+    }
+
+    .monogram .newsimg img {
+      width: 100%;
+      transition: all .6s;
+    }
+
+    .monogram .news-slide.owl-carousel .col-lg-4 {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .monogram .news-section .owl-theme .owl-nav [class*="owl-"] {
+      color: #333;
+      font-size: 14px;
+      margin: 5px;
+      padding: 4px 7px;
+      background: #fff;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+    }
+
+    .monogram .big-title {
+      text-align: left;
+    }
+
+    .monogram .big-title h2 {
+      font-size: 26px;
+      color: #5DB0C1;
+    }
+
+    .monogram a.view-more-btn-div {
+      float: right;
+      border-radius: 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    /***************************** FRAMES ***************************************/
+    .frames-div .grid-div .grid {
+      transition: all 1s;
+    }
+
+    .frames-div .grid-div .grid:hover {
+      transition: all .5s;
+      transform: translateY(-10px);
+    }
+
+    .frames-div .heading
+    {
+      margin: 10px 0;
+      padding-bottom: 10px;
+      color: black;
+      font-weight: 600;
+    }
+
+    .frames-div .image-div img{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .frames-div .image-caption{
+      background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148417584.jpg?size=626&ext=jpg&ga=GA1.2.2031644658.1674562410&semt=ais");
+      background-size: cover;
+      padding: 10px 0 5px 7px;
+    }
+
+    .frames-div .image-caption .price {
+      color: gray;
+    }
+
+    .frames-div .image-caption .name{
+      color: #4265c0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    .frames-div .image-caption .subtitle{
+      color: gray;
+    }
+
+
+    /***************************** VIDEO GRID ***************************************/
+
+        .video-grid-div .heading {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .video-grid-div .gallery-video-div {
+            margin: 100px 0;
+        }
+
+        .video-grid-div .gallery-video-div .gallery-video {
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+          
+        }
+
+        .video-grid-div .gallery-video-div .video-box {
+            box-sizing: content-box;
+            margin: 10px;
+            overflow: hidden;
+            display: inline-block;
+            color: white;
+            position: relative;
+            background-color: white;
+        }
+
+        .video-grid-div .gallery-video-div .video-box:hover {
+            cursor: pointer;
+        }
+
+        .video-grid-div .gallery-video-div .image-div img{
+            width: 660px;
+            height: 350px;
+        }
+
+    /***************************** WALL DECOR ***************************************/
+
+    #wall-decor .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 4px 16px;
+    }
+
+    #wall-decor #cards-container {
+      overflow: hidden;
+      margin: 20px;
+    }
+
+    #wall-decor .cards {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 99999px;
+
+
+    }
+
+    #wall-decor .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px -10px black;
+    }
+
+    .card {
+      height: 200px;
+      width: 200px;
+      display: flex;
+      flex-flow: column;
+      border-radius: 0.3em;
+      overflow: hidden;
+      transition: 300ms ease-in-out;
+      margin-left: 0.9em;
+    }
+
+    #wall-decor .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px -10px black;
+    }
+
+    #wall-decor .card-img {
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 350px;
+    }
+
+    #wall-decor #slide-left-container,
+    #wall-decor #slide-right-container {
+      display: none;
+    }
+
+    #wall-decor #slide-left-container.active,
+    #wall-decor #slide-right-container.active {
+      display: block;
+      cursor: pointer;
+    }
+
+    #wall-decor .slide-left,
+    #wall-decor .slide-right {
+      border-color: #ffc964;
+      border-style: solid;
+      height: 15px;
+      width: 15px;
+      margin-top: 30%;
+    }
+
+    #wall-decor .slide-left {
+      border-width: 4px 0 0 4px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      margin-left: 40%;
+    }
+
+    #wall-decor .slide-right {
+      border-width: 4px 4px 0 0;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin-left: 22%;
+    }
+
+
+
+    /***************************** OFFICE STATIONARY ***************************************/
+    #office-stationary .one {
+      margin: 30px auto !important;
+    }
+
+    #office-stationary .scroll {
+      overflow-y: auto;
+      background: #f9fcff;
+    }
+
+    #office-stationary .container {
+      width: 100%;
+      margin: 0;
+    }
+
+    #office-stationary .container .grid-cards {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      max-width: 1024px;
+      margin: 1rem auto;
+    }
+
+    @media (max-width: 922px) and (min-width: 601px) {
+      #office-stationary .container .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #office-stationary .container .grid-cards {
+        flex-direction: column;
+      }
+    }
+
+    #office-stationary .container .grid-cards .card {
+      position: relative;
+      flex: 1;
+      background: #fff;
+      padding: 1rem 1rem 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 1rem;
+      min-height: 170px;
+      margin: 15px;
+      transition: all ease 0.3s;
+      overflow: hidden;
+      animation: fadeInLeft 1.5s backwards;
+    }
+
+    #office-stationary .container .grid-cards .card:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    #office-stationary .container .grid-cards .card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    #office-stationary .container .grid-cards .card:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    #office-stationary .container .grid-cards .card:hover {
+      transform: translateY(-6px);
+      -webkit-transform: translateY(-6px);
+    }
+
+    #office-stationary .container .grid-cards .card img {
+      aspect-ratio: 500/320;
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      max-height: 320px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px -7px #aaa;
+    }
+
+    #office-stationary .container .grid-cards .card .card-body {
+      color: #676767;
+      width: 100%;
+      margin-bottom: 40px;
+      padding: 0 0.8rem;
+      position: relative;
+    }
+
+    #office-stationary .container .grid-cards .card .card-body .icon {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      padding: 15px 0;
+    }
+
+    #office-stationary .container .grid-cards .card .card-body .icon i {
+      position: relative;
+      font-size: 25px;
+      transition: 0.5s;
+      line-height: 0;
+      top: -7px;
+      left: -12px;
+      z-index: 2;
+    }
+
+
+    #office-stationary .container .grid-cards .card .card-body .title-card {
+      padding-bottom: 10px;
+    }
+
+    #office-stationary .container .grid-cards .card .card-button {
+      display: flex;
+      justify-content: flex-end;
+      width: calc(100% - 1rem);
+    }
+
+    #office-stationary .container .grid-cards .card .card-button a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #FFD854;
+      color: #fff;
+      text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.08);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      width: 56%;
+      height: 40px;
+      border-top-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    #office-stationary .container .grid-cards .card .card-button a:hover {
+      filter: brightness(0.98);
+    }
+
+    @keyframes fadeInLeft {
+      0% {
+        transform: translate(-100%, 0);
+      }
+
+      100% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+
+
+    /***************************** CONTACT US DIV ***************************************/
+    .contact-us-div {
+      margin-top: 30px;
+      background-color: #dc9df4;
+      border-radius: 20px;
+    }
+
+    .contact-us-div .left-col .image-div {
+      margin-top: 20px;
+    }
+
+
+    .contact-us-div .button-div {
+      margin: 20px 5px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .contact-us-div .button-div .btn {
+      min-width: 160px;
+      width: fit-content;
+      width: -moz-fit-content;
+      background-color: white;
+      padding: 0 30px;
+      height: 50px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #ffc964;
+      letter-spacing: 2.8px;
+      font-weight: 700;
+      line-height: 1.6;
+      box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 0;
+      /* btn text */
+    }
+
+    .contact-us-div .button-div .btn span {
+      z-index: 1;
+      text-align: center;
+    }
+
+    .contact-us-div .button-div .btn:before,
+    .contact-us-div .button-div .btn:after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      top: 0;
+      transition: all 0.4s ease;
+      background-color: #ffc964;
+    }
+
+    .contact-us-div .button-div .btn:before {
+      left: 0;
+    }
+
+    .contact-us-div .button-div .btn:after {
+      right: 0;
+    }
+
+    .contact-us-div .button-div .btn:hover {
+      transition: all 0.4s ease;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .contact-us-div .button-div .btn:hover:before,
+    .contact-us-div .button-div .btn:hover:after {
+      width: 51%;
+    }
+
+    /***************************** SERVICES DIV ***************************************/
+
+    .services-div section {
+      padding: 10px 0;
+    }
+
+    .services-div {
+      margin: 0px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .services-div .services-wrapper {
+      width: auto;
+      min-height: 400px;
+      padding: 25px;
+    }
+
+    .services-div .service-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .services-div .singleservice {
+      display: inline-block;
+      width: 25%;
+      height: 100%;
+      padding: 25px;
+      color: #b2b2b2;
+      text-align: left;
+      margin-bottom: 15px;
+      padding: 40px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-bottom: 5px solid #f3ca8e;
+      border-radius: 10px;
+    }
+
+    @media (max-width:500px) {
+      .services-div .singleservice {
+        width: 100%;
+      }
+    }
+
+    .services-div .subtitle {
+      color: #636262;
+      text-align: center;
+    }
+
+    .services-div img.serviceicon {
+      width: 20%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 5px;
+      opacity: .7;
+    }
+
+    /*  */
+
+    .payment-div {
+      margin: 60px 0;
+    }
+
+    .payment-div .pay-div {
+      max-width: 700px;
+    }
+
+    .payment-div .square-holder {
+      padding: 5px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .payment-div .square-holder img {
+      max-width: 100%;
+      height: 80px;
+      transition: all 0.3s;
+    }
+
+    /***************************** FOOTER ***************************************/
+    footer {
+      background-color: #2e3138;
+    }
+
+    footer h1,
+    footer h2,
+    footer h3,
+    footer h4,
+    footer h5,
+    footer h6 {}
+
+    footer section {
+      padding: 60px 0;
+      min-height: 100vh;
+    }
+
+    footer a,
+    footer a:hover,
+    footer a:focus,
+    footer a:active {
+      text-decoration: none;
+      outline: none;
+    }
+
+    footer ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    footer .main-footer {
+      position: relative;
+      background: #1e2129;
+    }
+
+    footer .footer-content {
+      position: relative;
+      padding: 85px 0px 80px 0px;
+    }
+
+    .footer-content .logo-widget {
+      position: relative;
+      margin-top: -5px;
+    }
+
+    .footer-content .logo-widget .footer-social li {
+      position: relative;
+      display: inline-block;
+      margin-right: 9px;
+    }
+
+    .footer-content .logo-widget .footer-social li:last-child {
+      margin-right: 0px;
+    }
+
+    .footer-content .logo-widget .footer-social li a {
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+      background: gray;
+      color: #fff;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    .footer-content .logo-widget .footer-social li a:hover {
+      color: #ffffff;
+      background: #ff5e14;
+    }
+
+    .footer-content .logo-widget .logo-box {
+      margin-bottom: 25px;
+    }
+
+    .footer-content .logo-widget .text p {
+      color: #9ea0a9;
+      margin-bottom: 32px;
+    }
+
+    .footer-content .footer-title {
+      position: relative;
+      font-size: 24px;
+      line-height: 35px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 27px;
+    }
+
+    .footer-content .service-widget .list li {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .footer-content .service-widget .list li a {
+      position: relative;
+      display: inline-block;
+      color: #9ea0a9;
+    }
+
+    .footer-content .service-widget .list li a:hover {
+      color: #ff5e14;
+    }
+
+    .footer-content .contact-widget p {
+      color: #9ea0a9;
+      margin-bottom: 15px;
+    }
+
+    .footer-content .contact-widget {
+      margin-left: 90px;
+    }
+
+    .footer-content .contact-widget .footer-title {
+      margin-bottom: 29px;
+    }
+
+    /** footer-bottom **/
+
+    .footer-bottom {
+      position: relative;
+      background: #13151a;
+      padding: 25px 0px 22px 0px;
+    }
+
+    .footer-bottom .copyright,
+    .footer-bottom .copyright a,
+    .footer-bottom .footer-nav li a {
+      position: relative;
+      color: #9ea0a9;
+    }
+
+    .footer-bottom .copyright a:hover,
+    .footer-bottom .footer-nav li a:hover {
+      color: #ff5e14;
+    }
+
+    .footer-bottom .footer-nav {
+      position: relative;
+      text-align: right;
+    }
+
+    .footer-bottom .footer-nav li {
+      position: relative;
+      display: inline-block;
+      margin-left: 29px;
+    }
+
+    .footer-bottom .footer-nav li:first-child {
+      margin-left: 0px;
+    }
+
+    .footer-bottom .footer-nav li:before {
+      position: absolute;
+      content: '';
+      background: #9ea0a9;
+      width: 1px;
+      height: 14px;
+      top: 7px;
+      left: -18px;
+    }
+
+    .footer-bottom .footer-nav li:first-child:before {
+      display: none;
+    }
+
+    footer .logo-box img {
+      max-width: 220px;
+    }
+  </style>
+</head>
+
+<body>
+  <!------------------------------ HEADER --------------------------------------->
+  <header class="header container">
+
+    <div class="row v-center">
+      <div class="header-item item-left">
+        <div class="logo">
+          <a href="#">logo</a>
+        </div>
+
+      </div>
+      <!-- menu start here -->
+
+      <!-- menu end here -->
+      <div class="header-item item-right">
+        <a href="#">Contact us</a>
+        <a href="#">FAQ's</a>
+        <a href="#">Track Order</a>
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="far fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+
+
+      </div>
+    </div>
+
+  </header>
+
+  <!------------------------------ BANNER SLIDER --------------------------------------->
+  <div id="slider">
+    <div class="slides">
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-sl-clocks-d.webp">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-sl-mobile-cases-d.webp">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-sl-illusion-lamp-d.webp">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-sl-acrylics-d.webp">
+        </div>
+      </div>
+    </div>
+    <div class="switch">
+      <ul>
+        <li>
+          <div class="on"></div>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <!---------------------------- TABS --------------------------------------->
+  <div class="wrapper">
+    <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+    <ul class="tabs-box">
+      <li class="tab">Coding</li>
+      <li class="tab active">JavaScript</li>
+      <li class="tab">Podcasts</li>
+      <li class="tab">Databases</li>
+      <li class="tab">Web Development</li>
+      <li class="tab">Unboxing</li>
+      <li class="tab">History</li>
+      <li class="tab">Programming</li>
+      <li class="tab">Gadgets</li>
+      <li class="tab">Algorithms</li>
+      <li class="tab">Comedy</li>
+      <li class="tab">Gaming</li>
+      <li class="tab">Share Market</li>
+      <li class="tab">Smartphones</li>
+      <li class="tab">Data Structure</li>
+    </ul>
+    <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+  </div>
+
+  <!--------------------------- CATEGORIES SECTION ---------------------------------->
+ 
+
+  <!--------------------------- CURATION NEW ARRIVAL ---------------------------------->
+  <div id="curation-new-main-div">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 curation-div">
+          <div class="heading text-center">
+            <h2 class="mb-sm text-center"><strong>Curation</strong> of the Month</h2>
+          </div>
+          <div class="grid-div row">
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-com-photo-hangings.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-com-photo-hangings.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-com-photo-hangings.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-com-photo-hangings.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- <div class="col-md-6 new-arrival-div">
+          <div class="heading text-center">
+            <h2 class="mb-sm text-center"><strong>New</strong> Arrivals</h2>
+          </div>
+          <div class="grid-div row">
+
+            <div class="grid col-6">
+              <div class="image-div">
+                <img
+                  src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-na-photo-phone-stand.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-6">
+              <div class="image-div">
+                <img
+                  src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-na-photo-phone-stand.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption">
+                <div class="price">
+                  Rs. 199
+                </div>
+                <div class="name">
+                  Car Hangings
+                </div>
+                <div class="subtitle">
+                  Availavle in 10 Shapes
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!----------------------------- CONTACT US-DIV ---------------------------------------->
+  <div class="contact-us-div container mt-5">
+    <div class="row">
+      <div class="col-md-4 left-col">
+        <div class="image-div text-center">
+          <img src="https://img.freepik.com/free-psd/open-gift-box-gift-icon-3d-render-illustration_47987-15626.jpg?size=626&ext=jpg&ga=GA1.1.2031644658.1674562410&semt=sph" alt=""
+            class="img-fluid">
+        </div>
+      </div>
+      <div class="col-md-8 right-col">
+        <div class="heading mt-4">
+          <h3>Heading heading</h3>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione animi blanditiis quam dolor necessitatibus
+            nihil itaque quae et quidem in, excepturi, voluptatem deleniti consequuntur hic! Qui cumque consequuntur
+            debitis possimus in enim, incidunt ex laudantium, deleniti harum assumenda officiis odit!</p>
+        </div>
+        <div class="footer">
+          note: Lorem ipsum voluptatibus eos necessitatibus rerum sequi dolores vitae esse.
+        </div>
+        <div class="button-div">
+          <button class="btn"><span>See Details</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----------------------------- CUSTOM COLLECTION ---------------------------------------->
+  <div id="custom-collection">
+    <div class="container">
+      <div class="heading text-center">
+        <h2 class="mb-sm text-center">Our more <strong>Custom</strong> Collection</h2>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #f1ce9a;" class="course-card-img">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-acrylic-fridge-magnets.webp"
+                class="main" alt="">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-acrylic-fridge-magnets.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+               <div class="price">
+                  From Rs.249
+               </div>
+               <div class="name">
+                  Mugs
+               </div>
+               <div class="subtitle">
+                available in 35+ unique designs & 8+ colors
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #acc1f7;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-mugs.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-mugs.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #f1ce9a;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-mugs.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-mugs.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #acc1f7;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-photo-stands.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-photo-stands.webp"
+                class="layered" alt="">
+
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #f1ce9a;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-photo-stands.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-photo-stands.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #acc1f7;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-illusion-lamp.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-illusion-lamp.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #f1ce9a;" class="course-card-img">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-illusion-lamp.webp"
+                class="main" alt="">
+              <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-illusion-lamp.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="course-card">
+            <div style="background: #acc1f7;" class="course-card-img">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-acrylic-fridge-magnets.webp"
+                class="main" alt="">
+              <img
+                src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-omcc-acrylic-fridge-magnets.webp"
+                class="layered" alt="">
+            </div>
+            <div class="course-card-content">
+              <div class="price">
+                 From Rs.249
+              </div>
+              <div class="name">
+                 Mugs
+              </div>
+              <div class="subtitle">
+               available in 35+ unique designs & 8+ colors
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------ MONOGRAM --------------------------------------------->
+  <div class="monogram">
+    <section class="news-section">
+      <div class="container">
+        <div class="heading text-center">
+          <h2 class="mb-sm text-center">Monogram <strong>Nameplates</strong></h2>
+        </div>
+        <div class="row mt-5">
+          <!--Single Blog Start-->
+          <a href="" class="col-lg-3 col-6 wow fadeInUp" data-wow-delay="0ms">
+            <div class="news-item">
+              <div class="news_box">
+                  <div class="newsimg"><img class="img-responsive"
+                    src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-monogram-single-c.webp"
+                    alt="">
+                  </div>
+                  <div class="img-caption">
+                    <div class="price">
+                      Rs.799
+                      <div class="subtitle">
+                        Single
+                        </div>
+                    </div>
+                    <div class="category">
+                    Classic Monograms
+                    </div>
+                    
+                  </div>
+              </div>
+            </div>
+          </a>
+          <!--Single Blog End-->
+          <!--Single Blog Start-->
+          <a href="" class="col-lg-3 col-6 wow fadeInUp" data-wow-delay="400ms">
+            <div class="news-item active">
+              <div class="news_box">
+                <div class="newsimg"><img class="img-responsive"
+                    src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-monogram-couple-p.webp"
+                    alt="">
+                </div>
+                <div class="img-caption">
+                  <div class="price">
+                    Rs.799
+                    <div class="subtitle">
+                      Couple
+                      </div>
+                  </div>
+                  <div class="category">
+                    Classic Monograms - Single
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--Single Blog End-->
+          <!--Single Blog Start-->
+          <a href="" class="col-lg-3 col-6 wow fadeInUp" data-wow-delay="800ms">
+            <div class="news-item">
+              <div class="news_box">
+                  <div class="newsimg"><img class="img-responsive"
+                    src="https://www.printshoppy.com/image/catalog/cireviewpro_images/2023/Apr/2023-04-18/as11681841240sd4_c.jpg"
+                    alt="">
+                  </div>
+                  <div class="img-caption">
+                    <div class="price">
+                      Rs.799
+                      <div class="subtitle">
+                        Triple
+                      </div>
+                    </div>
+                    <div class="category">
+                    Classic Monograms - Single
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </a>
+          <!--Single Blog End-->
+          <!--Single Blog Start-->
+          <a href="" class="col-lg-3 col-6 wow fadeInUp" data-wow-delay="800ms">
+            <div class="news-item">
+              <div class="news_box">
+                  <div class="newsimg"><img class="img-responsive"
+                    src="https://www.printshoppy.com/image/catalog/cireviewpro_images/2023/Jan/2023-01-08/as11673189041sd4_c.jpg"
+                    alt="">
+                  </div>
+                  <div class="img-caption">
+                    <div class="price">
+                      Rs.799
+                      <div class="subtitle">
+                        Single
+                      </div>
+                    </div>
+                    <div class="category">
+                      Classic Monograms - Single
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </a>
+          <!--Single Blog End-->
+        </div>
+      </div>
+  </div>
+
+  <!------------------------------ FRAMES --------------------------------------------->
+
+       <div class="frames-div container mb-5">
+          <div class="heading text-center">
+            <h2 class="mb-sm text-center"><strong>Frames</strong> Categories</h2>
+          </div>
+          <div class="grid-div row">
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption text-center">
+                <div class="name">
+                  Car Hangings
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption text-center">
+                <div class="name">
+                  Car Hangings
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6 mt-sm-0 mt-5">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption text-center">
+                <div class="name">
+                  Car Hangings
+                </div>
+              </div>
+            </div>
+
+            <div class="grid col-md-3 col-6 mt-sm-0 mt-5">
+              <div class="image-div">
+                <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+                  alt="" class="img-fluid">
+              </div>
+              <div class="image-caption text-center">
+                <div class="name">
+                  Car Hangings
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+       
+  <!------------------------------ VIDEOS --------------------------------------------->
+  <div class="video-grid-div container">
+    <div class="row">
+        <div class="col-sm-3 video-div">
+            <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+        <div class="col-sm-9">
+            <div class="image-div">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!------------------------------ WALL DECOR --------------------------------------------->
+  <div id="wall-decor" class="mt-5 mb-5">
+    <div class="heading text-center mt-3">
+      <h2 class="mb-sm text-center">Wall <strong>Decors</strong></h2>
+    </div>
+    <div class="container">
+      <div id="slide-left-container">
+        <div class="slide-left">
+        </div>
+      </div>
+      <div id="cards-container">
+        <div class="cards">
+          <div class="card" style="border: 1px solid gray;">
+            <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+              alt="" class="img-fluid">
+          </div>
+          <div class="card">
+            <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-wall-clocks.webp" alt=""
+              class="img-fluid">
+          </div>
+          <div class="card">
+            <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-acrylics.webp" alt=""
+              class="img-fluid">>
+          </div>
+          <div class="card">
+            <img
+              src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-acrylic-wall-gallery.webp"
+              alt="" class="img-fluid">>
+          </div>
+          <div class="card">
+            <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-canvas-frames.webp"
+              alt="" class="img-fluid">>
+          </div>
+          <div class="card">
+            <img
+              src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-aluminium-photo-frames.webp"
+              alt="" class="img-fluid">>
+          </div>
+          <div class="card">
+            <img src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-wall-clocks.webp" alt=""
+              class="img-fluid">
+          </div>
+          <div class="card">
+            <img
+              src="https://www.printshoppy.com/image/catalog/v6/webp/home-page/home-page-wd-extra-large-acrylics.webp"
+              alt="" class="img-fluid">>
+          </div>
+        </div>
+      </div>
+      <div id="slide-right-container">
+        <div class="slide-right">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----------------------------- OFFICE STATIONARY ----------------------------------->
+
+
+  <!----------------------------- SERVICES-DIV ---------------------------------------->
+  <div class="services-div">
+    <div class="service-container">
+      <div class="singleservice">
+        <img class="serviceicon" src="https://cdn-icons-png.flaticon.com/128/9431/9431205.png">
+           <div class="subtitle">
+            Easy 30-Day Return Policy
+           </div>
+      </div>
+      <div class="singleservice">
+        <img class="serviceicon" src="https://cdn-icons-png.flaticon.com/128/726/726455.png">
+            <div class="subtitle">
+              Express Delivery
+            </div>
+      </div>
+      <div class="singleservice">
+        <img class="serviceicon" src="https://cdn-icons-png.flaticon.com/128/5223/5223348.png">
+            <div class="subtitle">
+              100% Quality Assured
+            </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!----------------------------- PAYMENT-DIV ---------------------------------------->
+  <div class="payment-div">
+    <section class="section section-default mt-4 mb-none">
+      <div class="container">
+        <h2 class="mb-sm text-center">100% Secure <strong>Payments</strong></h2>
+        <strong>
+          <div class="container pay-div">
+            <div class="row">
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAABPlBMVEX///9MeLv3uhYUpkvoNSX29vb8/Pz5+fi7vb6am5xOdr9OUlbx8fHs7Ozd3t6MjY9FdLn/vA33twDl5eViZWk9QkhVWV7Y2NjQ0dEAnjMArE0Rp0fnKSYuZ7RCcbmur7DGx8hvcnU0OkF+gIOjpKXS6tne7+PE4sxIsmkAmyl3wInn8+pguXmOyp3x+fQAp0Azp1JMmUa3YzTURifPNwDmZ173x8Xo7fWbr9WLo87Q1u+PfDzxKiLmBADueXTX3+0+e6smnWmAgz9rjMVQc8RCg6e7yODUsSXybx7nJRDwiIM5jJNzrD70pxnrWSMzkYersTL1trQ9qEctl3rItSjqUUnitx/ykhw9iJuPrjjvex9nfKudsTH56OfTqlNZe7T725fpRDr74rMJXr7grjr1w1f60X799uj968kZIyw+3quLAAADuUlEQVRoge2X63fbNBiHFTd27Mqx21iSlWWNLDmsbGy0XNZ2Y6G7sEJhF1bujDEug43//x/glezE2Yem54TKPYej50PVxoof/95X0qkRcjgcDofD4XA4HA6Hw+Fw/M/pvbN95ULE2+9eHQ6HV6+917r5+nC0phkN25Zf31mbMRrdeL9F843hWsNoZ3e7NfOV0YL50gcffvTxzb0WtPsHt25f21kwf3LnTrfbnX7as20+3BpvbN29N3dfuq/Fxm1b/WCjA3z2cLeu+W5tBrflmh+NO4b1zm6l/vyLy7X6+EurZr8zY/0rU/NHm97jJ5X8+KZV9cF4rn5o1N97wJNKbbXZ++Mm9VPd7K83tfqxiT19ZlNdrbEKHfpk4BmqivsWzYdbTehvdOhvTegqtd3QLxvzXR36UR3a9Pq7wKJ5fyH0vdFsjXneD5et7+qjZnn/qEP/VJXba2FnNeqOPstOKrH3s/3QjXr96U6zxjz7e3qh189/OYETtDabg3T6wq56tq23ft0E6nKbjWX5+Ebzw+zlTAsMjrtthEbo9hhyb6SNevDbs9+n067V06Tm8MH4LbUXoBd7e/YzG4464+dz9eCPdqQ1wcGfr2r34FWrZsC/NTCH98B73bYaoeyvAfD3BZiB12/eXIzYYQcelWm47J+PQixezQrgXF5/fKmwJIry06dEdNEUUkKwKs5BLbFOnJNsiRq/pcYoQALH/9kcqtCM5ub9UOR6jAvBAzOGSZwYdY+Lwp+p4QrmqJ/nMfLNI8f9FdQla/rIMcW0DFDOKKOyhxKiR+qD2pfwK4nn6oRmIWaM5UhBpwImVlCTEn4UKTDpYZLFIY0QJnlc0BQRxv2CMlCjFPNejtNKHYoJLlEI5YoYSuEGXK1grtSCwcqRhdLVLnFu1lBEc6p7kWKdWkkxEVJVaimlvhJGk5AGmeqjMlpFHdF49gwh1c2cYKF05wQtaKJHre5TAr6SVOr6C1iIElaBjGK6ZI2eTqZMFZFQRaHbBs1PTOqUJlSYKoA6MLOS/oK6/w/8lcO240TXfBUElUWSp9DaHqyabAI+xopMQM8l1qPpdURFVmC5oPaV8BOit51cdiYsJSRUKRbBPTJCKRhRJmFMA9SHEevUrIdK+EhWqUn9PUxICFeQICua4flzzqt92cu56VqQc93mOMm5P2F+rD9MeF5ND2ZvuXEC2xpGEq6sPhXMMuhmesYsziy8cXOslCJn3RhPzt8MtYUD9cw5Nl+4HQ6Hw+FwOBwOh8PhcDgcbfEvFO1cjeXvezAAAAAASUVORK5CYII=" />
+                </div>
+              </div>
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/png;base64,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" />
+                </div>
+              </div>
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/png;base64,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" />
+                </div>
+              </div>
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/jpeg;base64,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" />
+                </div>
+              </div>
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/png;base64,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" />
+                </div>
+              </div>
+              <div class="col-4 col-md-2">
+                <div class="square-holder">
+                  <img alt=""
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAABPlBMVEX///9MeLv3uhYUpkvoNSX29vb8/Pz5+fi7vb6am5xOdr9OUlbx8fHs7Ozd3t6MjY9FdLn/vA33twDl5eViZWk9QkhVWV7Y2NjQ0dEAnjMArE0Rp0fnKSYuZ7RCcbmur7DGx8hvcnU0OkF+gIOjpKXS6tne7+PE4sxIsmkAmyl3wInn8+pguXmOyp3x+fQAp0Azp1JMmUa3YzTURifPNwDmZ173x8Xo7fWbr9WLo87Q1u+PfDzxKiLmBADueXTX3+0+e6smnWmAgz9rjMVQc8RCg6e7yODUsSXybx7nJRDwiIM5jJNzrD70pxnrWSMzkYersTL1trQ9qEctl3rItSjqUUnitx/ykhw9iJuPrjjvex9nfKudsTH56OfTqlNZe7T725fpRDr74rMJXr7grjr1w1f60X799uj968kZIyw+3quLAAADuUlEQVRoge2X63fbNBiHFTd27Mqx21iSlWWNLDmsbGy0XNZ2Y6G7sEJhF1bujDEug43//x/glezE2Yem54TKPYej50PVxoof/95X0qkRcjgcDofD4XA4HA6Hw+Fw/M/pvbN95ULE2+9eHQ6HV6+917r5+nC0phkN25Zf31mbMRrdeL9F843hWsNoZ3e7NfOV0YL50gcffvTxzb0WtPsHt25f21kwf3LnTrfbnX7as20+3BpvbN29N3dfuq/Fxm1b/WCjA3z2cLeu+W5tBrflmh+NO4b1zm6l/vyLy7X6+EurZr8zY/0rU/NHm97jJ5X8+KZV9cF4rn5o1N97wJNKbbXZ++Mm9VPd7K83tfqxiT19ZlNdrbEKHfpk4BmqivsWzYdbTehvdOhvTegqtd3QLxvzXR36UR3a9Pq7wKJ5fyH0vdFsjXneD5et7+qjZnn/qEP/VJXba2FnNeqOPstOKrH3s/3QjXr96U6zxjz7e3qh189/OYETtDabg3T6wq56tq23ft0E6nKbjWX5+Ebzw+zlTAsMjrtthEbo9hhyb6SNevDbs9+n067V06Tm8MH4LbUXoBd7e/YzG4464+dz9eCPdqQ1wcGfr2r34FWrZsC/NTCH98B73bYaoeyvAfD3BZiB12/eXIzYYQcelWm47J+PQixezQrgXF5/fKmwJIry06dEdNEUUkKwKs5BLbFOnJNsiRq/pcYoQALH/9kcqtCM5ub9UOR6jAvBAzOGSZwYdY+Lwp+p4QrmqJ/nMfLNI8f9FdQla/rIMcW0DFDOKKOyhxKiR+qD2pfwK4nn6oRmIWaM5UhBpwImVlCTEn4UKTDpYZLFIY0QJnlc0BQRxv2CMlCjFPNejtNKHYoJLlEI5YoYSuEGXK1grtSCwcqRhdLVLnFu1lBEc6p7kWKdWkkxEVJVaimlvhJGk5AGmeqjMlpFHdF49gwh1c2cYKF05wQtaKJHre5TAr6SVOr6C1iIElaBjGK6ZI2eTqZMFZFQRaHbBs1PTOqUJlSYKoA6MLOS/oK6/w/8lcO240TXfBUElUWSp9DaHqyabAI+xopMQM8l1qPpdURFVmC5oPaV8BOit51cdiYsJSRUKRbBPTJCKRhRJmFMA9SHEevUrIdK+EhWqUn9PUxICFeQICua4flzzqt92cu56VqQc93mOMm5P2F+rD9MeF5ND2ZvuXEC2xpGEq6sPhXMMuhmesYsziy8cXOslCJn3RhPzt8MtYUD9cw5Nl+4HQ6Hw+FwOBwOh8PhcDgcbfEvFO1cjeXvezAAAAAASUVORK5CYII=" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </strong>
+      </div>
+    </section>
+  </div>
+
+  <!----------------------------- FOOTER ---------------------------------------->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+            <div class="logo-widget footer-widget">
+              <figure class="logo-box"><a href="#"><img src="https://i.ibb.co/QDy827D/ak-logo.png" alt=""></a></figure>
+              <div class="text">
+                <p>Lorem ipsum dolor amet consectetur adi pisicing elit sed eiusm tempor incididunt ut labore dolore
+                  magna aliqua enim ad minim veniam quis.nostrud exercita.laboris nisi ut aliquip ea commodo conse
+                  quatuis aute irure.</p>
+              </div>
+              <ul class="footer-social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 offset-lg-2 footer-column">
+            <div class="service-widget footer-widget">
+              <div class="footer-title">Services</div>
+              <ul class="list">
+                <li><a href="#">Water Surve</a></li>
+                <li><a href="#">Education for all</a></li>
+                <li><a href="#">Food Serving</a></li>
+                <li><a href="#">Animal Saves</a></li>
+                <li><a href="#">Help Orphan</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+            <div class="contact-widget footer-widget">
+              <div class="footer-title">Contacts</div>
+              <div class="text">
+                <p>Lorem Ipsum, simply dummy text, printing, Chandigarh</p>
+                <p>+2(784) 1223323</p>
+                <p>info@example.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- main-footer end -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 column">
+          <div class="copyright"><a href="#">Anup</a> &copy; 2019 All Right Reserved</div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 column">
+          <ul class="footer-nav">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- new div -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script>
+    const tabsBox = document.querySelector(".tabs-box"),
+      allTabs = tabsBox.querySelectorAll(".tab"),
+      arrowIcons = document.querySelectorAll(".icon i");
+
+    let isDragging = false;
+
+    const handleIcons = (scrollVal) => {
+      let maxScrollableWidth = tabsBox.scrollWidth - tabsBox.clientWidth;
+      arrowIcons[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
+      arrowIcons[1].parentElement.style.display =
+        maxScrollableWidth - scrollVal <= 1 ? "none" : "flex";
+    };
+
+    arrowIcons.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        // if clicked icon is left, reduce 350 from tabsBox scrollLeft else add
+        let scrollWidth = (tabsBox.scrollLeft += icon.id === "left" ? -340 : 340);
+        handleIcons(scrollWidth);
+      });
+    });
+
+    allTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabsBox.querySelector(".active").classList.remove("active");
+        tab.classList.add("active");
+      });
+    });
+
+    const dragging = (e) => {
+      if (!isDragging) return;
+      tabsBox.classList.add("dragging");
+      tabsBox.scrollLeft -= e.movementX;
+      handleIcons(tabsBox.scrollLeft);
+    };
+
+    const dragStop = () => {
+      isDragging = false;
+      tabsBox.classList.remove("dragging");
+    };
+
+    tabsBox.addEventListener("mousedown", () => (isDragging = true));
+    tabsBox.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+
+    /* ------------------------ Watermark (Please Ignore) ----------------------- */
+    const createSVG = (width, height, className, childType, childAttributes) => {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
+      const child = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        childType
+      );
+
+      for (const attr in childAttributes) {
+        child.setAttribute(attr, childAttributes[attr]);
+      }
+
+      svg.appendChild(child);
+
+      return { svg, child };
+    };
+
+    document.querySelectorAll(".generate-button").forEach((button) => {
+      const width = button.offsetWidth;
+      const height = button.offsetHeight;
+
+      const style = getComputedStyle(button);
+
+      const strokeGroup = document.createElement("div");
+      strokeGroup.classList.add("stroke");
+
+      const { svg: stroke } = createSVG(width, height, "stroke-line", "rect", {
+        x: "0",
+        y: "0",
+        width: "100%",
+        height: "100%",
+        rx: parseInt(style.borderRadius, 10),
+        ry: parseInt(style.borderRadius, 10),
+        pathLength: "30"
+      });
+
+      strokeGroup.appendChild(stroke);
+      button.appendChild(strokeGroup);
+
+      const stars = gsap.to(button, {
+        repeat: -1,
+        repeatDelay: 0.5,
+        paused: true,
+        keyframes: [
+          {
+            "--generate-button-star-2-scale": ".5",
+            "--generate-button-star-2-opacity": ".25",
+            "--generate-button-star-3-scale": "1.25",
+            "--generate-button-star-3-opacity": "1",
+            duration: 0.3
+          },
+          {
+            "--generate-button-star-1-scale": "1.5",
+            "--generate-button-star-1-opacity": ".5",
+            "--generate-button-star-2-scale": ".5",
+            "--generate-button-star-3-scale": "1",
+            "--generate-button-star-3-opacity": ".5",
+            duration: 0.3
+          },
+          {
+            "--generate-button-star-1-scale": "1",
+            "--generate-button-star-1-opacity": ".25",
+            "--generate-button-star-2-scale": "1.15",
+            "--generate-button-star-2-opacity": "1",
+            duration: 0.3
+          },
+          {
+            "--generate-button-star-2-scale": "1",
+            duration: 0.35
+          }
+        ]
+      });
+
+      button.addEventListener("pointerenter", () => {
+        gsap.to(button, {
+          "--generate-button-dots-opacity": "1",
+          duration: 0.5,
+          onStart: () => {
+            setTimeout(() => stars.restart().play(), 500);
+          }
+        });
+      });
+
+      button.addEventListener("pointerleave", () => {
+        gsap.to(button, {
+          "--generate-button-dots-opacity": "0",
+          "--generate-button-star-1-opacity": ".25",
+          "--generate-button-star-1-scale": "1",
+          "--generate-button-star-2-opacity": "1",
+          "--generate-button-star-2-scale": "1",
+          "--generate-button-star-3-opacity": ".5",
+          "--generate-button-star-3-scale": "1",
+          duration: 0.15,
+          onComplete: () => {
+            stars.pause();
+          }
+        });
+      });
+    });
+
+    // new div
+    /**
+ * @description Change Home page slider's arrows active status
+ */
+    function updateSliderArrowsStatus(
+      cardsContainer,
+      containerWidth,
+      cardCount,
+      cardWidth
+    ) {
+      if (
+        $(cardsContainer).scrollLeft() + containerWidth <
+        cardCount * cardWidth + 15
+      ) {
+        $("#slide-right-container").addClass("active");
+      } else {
+        $("#slide-right-container").removeClass("active");
+      }
+      if ($(cardsContainer).scrollLeft() > 0) {
+        $("#slide-left-container").addClass("active");
+      } else {
+        $("#slide-left-container").removeClass("active");
+      }
+    }
+    $(function () {
+      // Scroll products' slider left/right
+      let div = $("#cards-container");
+      let cardCount = $(div)
+        .find(".cards")
+        .children(".card").length;
+      let speed = 1000;
+      let containerWidth = $(".container").width();
+      let cardWidth = 250;
+
+      updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+
+      //Remove scrollbars
+      $("#slide-right-container").click(function (e) {
+        if ($(div).scrollLeft() + containerWidth < cardCount * cardWidth) {
+          $(div).animate(
+            {
+              scrollLeft: $(div).scrollLeft() + cardWidth
+            },
+            {
+              duration: speed,
+              complete: function () {
+                setTimeout(
+                  updateSliderArrowsStatus(
+                    div,
+                    containerWidth,
+                    cardCount,
+                    cardWidth
+                  ),
+                  1005
+                );
+              }
+            }
+          );
+        }
+        updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+      });
+      $("#slide-left-container").click(function (e) {
+        if ($(div).scrollLeft() + containerWidth > containerWidth) {
+          $(div).animate(
+            {
+              scrollLeft: "-=" + cardWidth
+            },
+            {
+              duration: speed,
+              complete: function () {
+                setTimeout(
+                  updateSliderArrowsStatus(
+                    div,
+                    containerWidth,
+                    cardCount,
+                    cardWidth
+                  ),
+                  1005
+                );
+              }
+            }
+          );
+        }
+        updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+      });
+
+      // If resize action ocurred then update the container width value
+      $(window).resize(function () {
+        try {
+          containerWidth = $("#cards-container").width();
+          updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+        } catch (error) {
+          console.log(
+            `Error occured while trying to get updated slider container width: 
+            ${error}`
+          );
+        }
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>
